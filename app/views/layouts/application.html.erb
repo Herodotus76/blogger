@@ -10,6 +10,15 @@
 
   <body>
   	<p class="flash"><%= flash.notice %></p>
+    <div class="sidebar">
+      <ul id="sidebar-ul">
+        <li class="sidebar-list"><span class="sidebar-span"><%= link_to "Articles", articles_path %></span></li>
+        <li class="sidebar-list"><span class="sidebar-span"><%= link_to "Tags", tags_path %></span></li>
+        <% if logged_in? %>
+         <li class="sidebar-list"><span class="sidebar-span"><%= link_to "Authors", authors_path %></span></li>
+        <% end%>
+      </ul>
+    </div>
     <div id="container">
       <div id="content">
         <%= yield %>
